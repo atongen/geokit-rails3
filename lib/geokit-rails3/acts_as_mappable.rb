@@ -139,6 +139,10 @@ module Geokit
           if origin
             arel = substitute_distance_in_where_values(arel, origin, units, formula)
           end
+          
+          if self.through
+            arel = arel.includes(self.through)
+          end
         end
 
         arel
