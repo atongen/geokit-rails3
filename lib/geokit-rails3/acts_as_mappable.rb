@@ -141,7 +141,7 @@ module Geokit
           end
           
           if self.through
-            arel = arel.includes(self.through)
+            arel = arel.joins(self.through)
           end
         end
 
